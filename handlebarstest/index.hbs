@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <title>Handlebars test page</title>
+  </head>
+  <body>
+    <p>Hello, {{name}}! How are you?</p>
+    <p>It looks like you have some friends:</p>
+    <ul>{{#otherpeople}}
+      <li>{{name}}, age {{age}}</li>
+    {{/otherpeople}}</ul>
+    <p>It looks like you like these ice-cream flavors:</p>
+    <ul>{{#each icecreams}}
+        <li>{{this}}</li>
+    {{/each}}</ul>
+    <p>Why not visit Wikipedia? {{#wikipedia}}{{page}}{{/wikipedia}}</p>
+  </body>
+</html>
