@@ -16,6 +16,19 @@ exports.map = function(list, iteratee, context) {
 // - reduceRight
 // - find
 // - filter
+
+exports.filter = function(list, predicate, context) {
+  var result = [];
+
+  for (var key in list) {
+    if (predicate.call(context, list[key])) {
+      result.push(list[key]);
+    }
+  }
+
+  return result;
+};
+
 // - where
 // - findWhere
 // - reject
