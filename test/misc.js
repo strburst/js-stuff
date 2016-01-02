@@ -30,6 +30,28 @@ describe('miscellaneous utilities', function() {
       }, 'purging key');
     });
 
+    it('should sort items by a function', function() {
+      assert.deepEqual(misc.distinctMap(function(order) {
+        return order.item + ' ' + order.type;
+      }, [
+        { name: 'Alice', item: 'cookies', type: 'with sauce', quantity: 12 },
+        { name: 'Bob', item: 'muffins', type: 'with butter', quantity: 5 },
+        { name: 'Carol', item: 'muffins', type: 'with sauce',  quantity: 7 },
+        { name: 'Dave', item: 'muffins', type: 'with butter', quantity: 6 },
+      ]), {
+        'cookies with sauce': [
+          { name: 'Alice', item: 'cookies', type: 'with sauce', quantity: 12 },
+        ],
+        'muffins with butter': [
+          { name: 'Bob', item: 'muffins', type: 'with butter', quantity: 5 },
+          { name: 'Dave', item: 'muffins', type: 'with butter', quantity: 6 },
+        ],
+        'muffins with sauce': [
+          { name: 'Carol', item: 'muffins', type: 'with sauce',  quantity: 7 },
+        ],
+      });
+    });
+
     it('should work in edge cases', function() {
       assert.deepEqual(misc.distinctMap('foo', []), {}, 'empty object list');
       assert.deepEqual(misc.distinctMap('foo', [], true), {}, 'empty object list');
