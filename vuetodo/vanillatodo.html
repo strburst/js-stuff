@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>VanillaJS Todo List</title>
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <div id='page'>
+
+    <h1>Todo List</h1>
+
+    Input new todo items here: <input id='newTodos' type='text'></input>
+
+    <h2>Todo items (<span id='headerCount'>?</span>)</h2>
+
+    <div id='todoList'></div>
+
+    <div id='actionBar'>
+      Actions:
+      <input id='clearCompleted' type='button' value='clear completed'></input>
+      <input id='save' type='button' value='save changes'></input>
+      <input id='deleteAll' type='button' value='delete everything'></input>
+    </div>
+
+  </div>
+
+  <script src='vanillatodo.js'></script>
+</body>

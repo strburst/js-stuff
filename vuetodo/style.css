@@ -1,0 +1,25 @@
+h1, h2, h3 {
+  font-family: 'monospace';
+}
+
+h1 {
+  margin-top: 0;
+}
+
+body {
+  padding: 2%;
+  background-color: #aba;
+}
+
+#page {
+  margin: auto auto;
+  background-color: #fff;
+  border: 10px solid #000;
+  padding: 1em;
+
+  max-width: 50em;
+}
+
+.completed {
+  text-decoration: line-through;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <title>Vue.js Todo List</title>
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+  <div id='page'>
+
+    <h1>Todo List</h1>
+
+    Input new todo items here:
+    <input id='newTodos' type='text' @keydown.enter="enterTodo"></input>
+
+    <h2>Todo items (<span id='headerCount'>{{ todos.length }}</span>)</h2>
+
+    <div id='todoList'>
+      Click an item to mark it as completed.
+      <ol>
+        <li v-for="todo in todos"
+            @click="completeTodo"
+            :class="todo.completed ? 'completed' : ''">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div id='actionBar'>
+      Actions:
+      <input id='clearCompleted' type='button' value='clear completed'
+            @click='clearCompleted'></input>
+      <input id='save' type='button' value='save changes'
+            :disabled='!changed'
+            @click='save'></input>
+      <input id='deleteAll' type='button' value='delete everything'
+            @click='deleteAll'></input>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src='vuetodo.js'></script>
+</body>
