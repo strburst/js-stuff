@@ -6,6 +6,12 @@ var app = new Vue({
     todos: [],
   },
 
+  computed: {
+    numTodos() {
+      return this.todos.length;
+    }
+  },
+
   created: function() {
     const raw = localStorage.getItem('todos');
     if (raw) {
